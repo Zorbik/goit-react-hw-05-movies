@@ -13,8 +13,6 @@ export async function getTrendingMovies() {
     const response = await instance.get(
       `trending/all/week?api_key=${API_KEY}&language=${LANG}`
     );
-    console.log('response.data', response.data);
-
     return response.data;
   } catch (error) {}
 }
@@ -26,7 +24,7 @@ export async function getSearchMovies(searchQuery) {
     );
     console.log('response.data.results', response.data.results);
 
-    return response.data.results;
+    return response.data;
   } catch (error) {
     console.error(error);
   }

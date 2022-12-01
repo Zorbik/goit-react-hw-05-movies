@@ -7,9 +7,9 @@ import {
 } from './ListItem.styled';
 
 export const ListItem = ({ items }) => {
-  const { backdrop_path, title, name } = items;
+  const { id, backdrop_path, title, name } = items;
   return (
-    <StyledItem>
+    <StyledItem data-id={id}>
       <StyledLink>
         <StyledImg
           src={baseImageUrl + backdrop_path}
