@@ -1,4 +1,4 @@
-import { Box } from '../Box';
+import { Box } from '../../components';
 import { FormStyled, InputButton, InputStyled } from './SearchBox.styled';
 
 export const SearchBox = ({ onSubmit }) => {

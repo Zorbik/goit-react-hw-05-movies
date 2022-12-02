@@ -1,25 +1,9 @@
 import { useEffect, useState } from 'react';
 import { getMovieById } from '../../services/fetchAPI';
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
+import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { Box } from '../../components/Box';
 import { MovieItem } from '../../components/Movies/MovieItem';
-import styled from 'styled-components';
-
-export const StyledLink = styled(Link)`
-  display: block;
-  max-width: 300px;
-  text-align: center;
-  padding: ${p => p.theme.space[2]}px;
-  margin-top: ${p => p.theme.space[2]}px;
-  margin-bottom: -${p => p.theme.space[3]}px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: ${p => p.theme.colors.black};
-  :hover {
-    color: ${p => p.theme.colors.blue};
-    background-color: ${p => p.theme.colors.lightBlue};
-  }
-`;
+import { StyledLink, LinkDeteils } from './MovieDetails.styled';
 
 export const MovieDetails = () => {
   const { movieId } = useParams();
@@ -36,14 +20,22 @@ export const MovieDetails = () => {
     getMovie(movieId);
   }, [movieId]);
   return (
-    <Box as="main">
+    <Box as="main" backgroundColor="grey">
       <StyledLink to={location.state.from}>
         Повернутися на попередню сторінку
       </StyledLink>
       <Box as="section">
         <MovieItem movie={movie} />
       </Box>
-      <Box as="section">
+      <Box as="section" display="flex" justifyContent="center">
+        <LinkDeteils to="cast" state={{ from: location.state.from }}>
+          Акторський склад
+        </LinkDeteils>
+        <LinkDeteils to="reviews" state={{ from: location.state.from }}>
+          Огляди
+        </LinkDeteils>
+      </Box>
+      <Box as="section" p={4}>
         <Outlet />
       </Box>
     </Box>

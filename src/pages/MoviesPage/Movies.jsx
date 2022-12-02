@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getSearchMovies } from '../../services/fetchAPI';
 import { Box } from '../../components/Box';
-import { SearchBox } from '../../components/Movies/SearchBox';
+import { SearchBox } from '../../components/SearchBox/SearchBox';
 import { GalleryItems } from '../../components/Movies/GalleryItems';
 import { useSearchParams } from 'react-router-dom';
 

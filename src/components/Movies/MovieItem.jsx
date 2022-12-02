@@ -1,5 +1,5 @@
 import { baseImageUrl } from '../../services/fetchAPI';
-import { Box } from '../Box';
+import { Box } from '../../components';
 
 export const MovieItem = ({ movie }) => {
   if (!movie) return;
@@ -14,7 +14,15 @@ export const MovieItem = ({ movie }) => {
   } = movie;
   return (
     <Box display="flex" p={4}>
-      <img src={baseImageUrl + poster_path} alt={title} width="500" />
+      <img
+        src={
+          poster_path
+            ? baseImageUrl + poster_path
+            : 'http://dummyimage.com/500x750/c0c0c0.jpg&text=Це замість фото! :)'
+        }
+        alt={title}
+        width="500"
+      />
       <Box m={4}>
         <h1>{title}</h1>
         <p>

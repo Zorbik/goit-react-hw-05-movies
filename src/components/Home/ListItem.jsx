@@ -15,7 +15,7 @@ export const ListItem = ({ items, state }) => {
           src={
             backdrop_path
               ? baseImageUrl + backdrop_path
-              : 'http://dummyimage.com/500x280/c0c0c0.jpg&text=Це - картинка! :)'
+              : 'http://dummyimage.com/500x280/c0c0c0.jpg&text=Картинку вкрали кацапи :('
           }
           alt={title ?? name}
           width="500"

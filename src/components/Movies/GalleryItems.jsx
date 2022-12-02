@@ -1,5 +1,4 @@
-import { ListItem } from '../Home/ListItem';
-import { Box } from '../Box';
+import { Box, ListItem } from '../../components';
 import { useLocation } from 'react-router-dom';
 
 export const GalleryItems = ({ movies }) => {

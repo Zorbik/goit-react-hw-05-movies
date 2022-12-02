@@ -8,7 +8,7 @@ const navItems = [
 
 export const Appbar = () => {
   return (
-    <Box as="header">
+    <Box as="header" boxShadow="0px 10px 15px -10px rgba(0,0,0,0.75)">
       <Box as="nav" display="flex">
         {navItems.map(({ href, text }) => (
           <StyledLink to={href} key={href}>

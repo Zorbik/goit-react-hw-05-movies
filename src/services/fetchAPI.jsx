@@ -11,7 +11,7 @@ const instance = axios.create({
 export async function getTrendingMovies() {
   try {
     const response = await instance.get(
-      `trending/all/week?api_key=${API_KEY}&language=${LANG}`
+      `trending/movie/week?api_key=${API_KEY}&language=${LANG}`
     );
     return response.data;
   } catch (error) {}
@@ -22,8 +22,6 @@ export async function getSearchMovies(searchQuery) {
     const response = await instance.get(
       `search/movie?api_key=${API_KEY}&language=${LANG}&query=${searchQuery}`
     );
-    console.log('response.data.results', response.data.results);
-
     return response.data;
   } catch (error) {
     console.error(error);
@@ -35,8 +33,6 @@ export async function getMovieById(movieId) {
     const response = await instance.get(
       `movie/${movieId}?api_key=${API_KEY}&language=${LANG}`
     );
-    console.log('response.data', response.data);
-
     return response.data;
   } catch (error) {
     console.error(error);
@@ -48,8 +44,6 @@ export async function getMovieCastById(movieId) {
     const response = await instance.get(
       `movie/${movieId}/credits?api_key=${API_KEY}&language=${LANG}`
     );
-    console.log('response.data', response.data.cast);
-
     return response.data.cast;
   } catch (error) {
     console.error(error);
@@ -59,11 +53,9 @@ export async function getMovieCastById(movieId) {
 export async function getMovieReviewById(movieId) {
   try {
     const response = await instance.get(
-      `movie/${movieId}/reviews?api_key=${API_KEY}&language=${LANG}`
+      `movie/${movieId}/reviews?api_key=${API_KEY}`
     );
-    console.log('response.data', response.data.results);
-
-    return response.data.results;
+    return response.data;
   } catch (error) {
     console.error(error);
   }
