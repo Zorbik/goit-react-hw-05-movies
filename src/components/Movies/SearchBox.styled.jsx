@@ -12,6 +12,7 @@ export const InputStyled = styled.input`
   height: 40px;
   padding: 4px;
   border-radius: 4px;
+  border: ${p => p.theme.colors.lightBlue} ${p => p.theme.borders.normal};
 `;
 
 export const InputButton = styled.button`

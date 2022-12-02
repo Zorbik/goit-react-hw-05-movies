@@ -6,13 +6,17 @@ import {
   TitleMovie,
 } from './ListItem.styled';
 
-export const ListItem = ({ items }) => {
+export const ListItem = ({ items, state }) => {
   const { id, backdrop_path, title, name } = items;
   return (
-    <StyledItem data-id={id}>
-      <StyledLink>
+    <StyledItem>
+      <StyledLink to={`/movies/${id}`} state={state}>
         <StyledImg
-          src={baseImageUrl + backdrop_path}
+          src={
+            backdrop_path
+              ? baseImageUrl + backdrop_path
+              : 'http://dummyimage.com/500x280/c0c0c0.jpg&text=Це - картинка! :)'
+          }
           alt={title ?? name}
           width="500"
         />

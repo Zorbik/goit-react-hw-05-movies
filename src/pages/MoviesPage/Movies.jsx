@@ -6,12 +6,16 @@ import { GalleryItems } from '../../components/Movies/GalleryItems';
 import { useSearchParams } from 'react-router-dom';
 
 export const Movies = () => {
-  const [search, setSearch] = useState('');
-  const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+  const searchQuery = searchParams.get('query') ?? '';
+  const [search, setSearch] = useState(searchQuery);
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    if (search === '') return;
+    if (search === '') {
+      setMovies([]);
+      return;
+    }
     const getMovies = async () => {
       try {
         const { results } = await getSearchMovies(search);
@@ -25,7 +29,7 @@ export const Movies = () => {
     e.preventDefault();
     const query = e.target[0].value;
     setSearch(query);
-    setSearchParams({ query: query });
+    setSearchParams(query !== '' ? { query: query } : {});
   };
 
   return (
