@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { getTrendingMovies } from '../../services/fetchAPI';
-import { Box } from '../../components/Box';
+import { Box, GalleryItems } from '../../components';
 import { TitlePage } from '../../components/Home/ListItem.styled';
-import { GalleryItems } from '../../components/Movies/GalleryItems';
 
-export const Home = () => {
+const Home = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     const fff = async () => {
@@ -23,3 +22,5 @@ export const Home = () => {
     </Box>
   );
 };
+
+export default Home;

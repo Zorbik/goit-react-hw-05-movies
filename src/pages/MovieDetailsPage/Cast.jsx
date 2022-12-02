@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Box } from '../../components/Box';
-import { CastList } from '../../components/Movies/Cast/CastList';
+import { Box, CastList } from '../../components';
 import { getMovieCastById } from '../../services/fetchAPI';
 
-export const Cast = () => {
+const Cast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
 
@@ -24,3 +23,5 @@ export const Cast = () => {
     </Box>
   );
 };
+
+export default Cast;

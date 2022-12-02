@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
-import { getMovieById } from '../../services/fetchAPI';
+import { Suspense, useEffect, useState } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
-import { Box } from '../../components/Box';
-import { MovieItem } from '../../components/Movies/MovieItem';
+import { getMovieById } from '../../services/fetchAPI';
+import { Box, MovieItem } from '../../components';
 import { StyledLink, LinkDeteils } from './MovieDetails.styled';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState();
   const location = useLocation();
@@ -36,8 +35,12 @@ export const MovieDetails = () => {
         </LinkDeteils>
       </Box>
       <Box as="section" p={4}>
-        <Outlet />
+        <Suspense>
+          <Outlet />
+        </Suspense>
       </Box>
     </Box>
   );
 };
+
+export default MovieDetails;
