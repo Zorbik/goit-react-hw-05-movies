@@ -1,7 +1,7 @@
-import { Box, Appbar } from '../components';
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import { ProgressBar } from 'react-loader-spinner';
+import { Box, Appbar } from '../components';
 
 export const Layout = () => {
   return (
