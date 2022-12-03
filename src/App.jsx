@@ -1,13 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
-import { Layout } from './components';
-// import { Cast, Home, MovieDetails, Movies, Reviews, Error } from './pages';
-
 import { lazy } from 'react';
-// export { default as Movies } from './MoviesPage/Movies';
-// export { default as Reviews } from './MovieDetailsPage/Reviews';
-// export { default as MovieDetails } from './MovieDetailsPage/MovieDetails';
-// export { default as Cast } from './MovieDetailsPage/Cast';
-// export { default as Home } from './HomePage/HomePage';
+import { Layout } from './components';
+
 const Home = lazy(() => import('./pages/HomePage/HomePage'));
 const Movies = lazy(() => import('./pages/MoviesPage/Movies'));
 const Reviews = lazy(() => import('./pages/MovieDetailsPage/Reviews'));
