@@ -8,13 +8,13 @@ import { lazy } from 'react';
 // export { default as MovieDetails } from './MovieDetailsPage/MovieDetails';
 // export { default as Cast } from './MovieDetailsPage/Cast';
 // export { default as Home } from './HomePage/HomePage';
-export const Home = lazy(() => import('./HomePage/HomePage'));
-export const Movies = lazy(() => import('./MoviesPage/Movies'));
-export const Reviews = lazy(() => import('./MovieDetailsPage/Reviews'));
+export const Home = lazy(() => import('./pages/HomePage/HomePage'));
+export const Movies = lazy(() => import('./pages/MoviesPage/Movies'));
+export const Reviews = lazy(() => import('./pages/MovieDetailsPage/Reviews'));
 export const MovieDetails = lazy(() =>
-  import('./MovieDetailsPage/MovieDetails')
+  import('./pages/MovieDetailsPage/MovieDetails')
 );
-export const Cast = lazy(() => import('./MovieDetailsPage/Cast'));
+export const Cast = lazy(() => import('./pages/MovieDetailsPage/Cast'));
 
 export const App = () => {
   return (
