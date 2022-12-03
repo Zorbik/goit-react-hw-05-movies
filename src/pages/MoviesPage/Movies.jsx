@@ -33,7 +33,7 @@ const Movies = () => {
   return (
     <Box as="main">
       <SearchBox onSubmit={onFormSubmit} />
-      <GalleryItems movies={movies} />
+      {movies.length ? <GalleryItems movies={movies} /> : ''}
     </Box>
   );
 };
