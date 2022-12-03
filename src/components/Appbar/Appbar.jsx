@@ -3,7 +3,7 @@ import { StyledLink } from './Appbar.styled';
 
 const navItems = [
   { href: '/', text: 'Home' },
-  { href: 'movies', text: 'Movies' },
+  { href: '/movies', text: 'Movies' },
 ];
 
 export const Appbar = () => {
