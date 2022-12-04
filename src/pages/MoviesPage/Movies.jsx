@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getSearchMovies } from '../../services/fetchAPI';
-import { Box, SearchBox, GalleryItems } from '../../components';
+import { Box, SearchBox } from '../../components';
 import { useSearchParams } from 'react-router-dom';
 
 const Movies = () => {
@@ -29,6 +29,7 @@ const Movies = () => {
     setSearch(query);
     setSearchParams(query !== '' ? { query: query } : {});
   };
+  console.log('query', movies);
 
   return (
     <Box as="main">
