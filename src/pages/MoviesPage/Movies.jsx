@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { getSearchMovies } from '../../services/fetchAPI';
 import { Box, SearchBox, GalleryItems } from '../../components';
-import { useSearchParams } from 'react-router-dom';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
